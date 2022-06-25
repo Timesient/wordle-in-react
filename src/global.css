@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "NYTKarnakCondensed";
+  font-weight: 700;
+  font-display: block;
+  src: url(/public/fonts/karnakcondensed-normal-700.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "NYTFranklin-500";
+  font-weight: 500;
+  font-display: swap;
+  src: url(/public/fonts/franklin-normal-500.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "NYTFranklin-700";
+  font-weight: 700;
+  font-display: swap;
+  src: url(/public/fonts/franklin-normal-700.woff2) format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* base color */
+:root {
+  --yellow: #c9b458;
+  --green: #6aaa64;
+
+  --color-tone-1: #000000;
+  --color-tone-2: #787c7e;
+  --color-tone-3: #878a8c;
+  --color-tone-4: #d3d6da;
+  --color-tone-5: #edeff1;
+  --color-tone-6: #f6f7f8;
+  --color-tone-7: #ffffff;
+  --color-nav-hover: #f4f4f4;
+  
+  --color-present: var(--yellow);
+  --color-correct: var(--green);
+  --color-absent: var(--color-tone-2);
+}
+
+/* App base */
+:root {
+  --header-height: 50px;
+  --game-max-width: 500px;
+}
+
+/* keyboard & key */
+:root {
+  --keyboard-height: 200px;
+  --keyboard-font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --key-bg: var(--color-tone-4);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+}
+
+/* z-index */
+:root {
+  --error-z-index: 500;
+  --toast-z-index: 1000;
+  --modal-z-index: 2000;
+  --page-z-index: 3000;
+  --system-toast-z-index: 4000;
+}
+
+/* modal */
+:root {
+  --modal-content-bg: var(--color-tone-7);
+  --modal-more-text-font-family: 'NYTFranklin-700';
+  --modal-nav-item-font-family: 'NYTFranklin-500';
+}

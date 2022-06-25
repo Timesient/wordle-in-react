@@ -1,0 +1,164 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: var(--modal-z-index);
+
+  display: flex;
+  justify-content: left;
+}
+
+.contentContainer {
+  position: relative;
+  width: 375px;
+  max-width: var(--game-max-width);
+
+  margin-top: calc(var(--header-height) + 1px);
+
+  border: 1px solid var(--color-tone-6);
+  background-color: var(--modal-content-bg);
+  box-shadow: 3px 5px 5px rgb(0 0 0 / 15%);
+  overflow-y: auto;
+
+  animation: SlideRight 200ms;
+}
+
+.closingContentContainer {
+  animation: SlideLeft 200ms;
+}
+
+/* Animation Keyframes start */
+@keyframes SlideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+/* Animation Keyframes end */
+
+.closeIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.navHeader {
+  padding-top: 18px;
+  padding-left: 18px;
+
+  display: flex;
+}
+
+.moreText {
+  margin: 31px 0px 24px 0px;
+  padding-left: 18px;
+
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--modal-more-text-font-family);
+  text-transform: uppercase;
+}
+
+.gameList {
+  display: flex;
+  flex-direction: column;
+}
+
+.nytList {
+  margin-top: 4px;
+  padding-top: 13px;
+  padding-bottom: 11px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid #dcdcdc;
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background-color: var(--color-nav-hover);
+}
+
+.navItem {
+  height: 40px;
+  padding-left: 18px;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  color: var(--color-tone-1);
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--modal-nav-item-font-family);
+}
+
+.navIcon {
+  width: 36px;
+  height: 24px;
+
+  padding-right: 8px;
+
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.navTitle {
+  padding-bottom: 2px;
+}
+
+.privacy {
+  margin-left: 17px;
+  margin-right: 25px;
+}
+
+.privacyItem {
+  height: 52px;
+  padding-top: 12px;
+  
+  display: flex;
+  align-items: center;
+
+  color: var(--color-tone-1);
+  font-family: var(--modal-nav-item-font-family);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+
+  border-top: 1px solid #dcdcdc;
+}

@@ -1,0 +1,33 @@
+.appHeader {
+  width: 100%;
+  height: calc(var(--header-height) + 1px);
+  padding: 0 1rem;
+  
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--color-tone-4);
+}
+
+.menuLeft,
+.menuRight {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 0.01em;
+  flex-grow: 1;
+  font-family: 'NYTKarnakCondensed';
+  font-size: 37px;
+  user-select: none;
+}
+
+.icon {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 4px;
+}
