@@ -1,0 +1,21 @@
+.contentWrapper {
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  font-family: var(--instruction-content-font-family);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}

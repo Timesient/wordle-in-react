@@ -1,0 +1,5 @@
+.closeIcon {
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+}

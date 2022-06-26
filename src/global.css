@@ -41,9 +41,6 @@ code {
 
 /* base color */
 :root {
-  --yellow: #c9b458;
-  --green: #6aaa64;
-
   --color-tone-1: #000000;
   --color-tone-2: #787c7e;
   --color-tone-3: #878a8c;
@@ -52,9 +49,15 @@ code {
   --color-tone-6: #f6f7f8;
   --color-tone-7: #ffffff;
   --color-nav-hover: #f4f4f4;
-  
-  --color-present: var(--yellow);
+}
+
+/* tile color */
+:root {
+  --green: #6aaa64;
+  --yellow: #c9b458;
+
   --color-correct: var(--green);
+  --color-present: var(--yellow);
   --color-absent: var(--color-tone-2);
 }
 
@@ -89,4 +92,9 @@ code {
   --modal-content-bg: var(--color-tone-7);
   --modal-more-text-font-family: 'NYTFranklin-700';
   --modal-nav-item-font-family: 'NYTFranklin-500';
+}
+
+/* instruction */
+:root {
+  --instruction-content-font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }

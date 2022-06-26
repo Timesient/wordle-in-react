@@ -1,0 +1,46 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--color-tone-7);
+  z-index: var(--page-z-index);
+
+  animation: SlideIn 100ms linear;
+}
+
+.closingContainer {
+  animation: SlideOut 150ms linear;
+}
+
+@keyframes SlideIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideOut {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}

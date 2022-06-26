@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setIsNavModalShowing } from '../../store/switchSlice';
+import { setIsNavModalShowing, setIsInstructionPageShowing } from '../../store/switchSlice';
 
 import { menuIconSVG, helpIconSVG, statIconSVG, settingIconSVG } from '../../lib/svgIcons';
 import styles from './AppHeader.module.css';
@@ -17,7 +17,12 @@ export default function AppHeader() {
         >
           { menuIconSVG }
         </button>
-        <button className={styles.icon}>{ helpIconSVG }</button>
+        <button
+          className={styles.icon}
+          onClick={() => dispatch(setIsInstructionPageShowing(true))}
+        >
+          { helpIconSVG }
+        </button>
       </div>
       <div className={styles.title}>Wordle</div>
       <div className={styles.menuRight}>
