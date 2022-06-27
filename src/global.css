@@ -49,6 +49,7 @@ code {
   --color-tone-6: #f6f7f8;
   --color-tone-7: #ffffff;
   --color-nav-hover: #f4f4f4;
+  --opacity-50: rgba(255, 255, 255, 0.5);
 }
 
 /* tile color */

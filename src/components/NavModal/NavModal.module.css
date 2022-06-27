@@ -57,15 +57,6 @@
 }
 /* Animation Keyframes end */
 
-.closeIcon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-
-  cursor: pointer;
-  user-select: none;
-}
-
 .content {
   display: flex;
   flex-direction: column;

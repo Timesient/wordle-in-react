@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsNavModalShowing, setIsNavModalShowing } from '../../store/switchSlice';
-import { closeIconSVG, NYTGamesLogoSVG } from '../../lib/svgIcons';
+import { NYTGamesLogoSVG } from '../../lib/svgIcons';
 import { gameListContent, nytListContent } from './NavModalPresets';
+import CloseButton from '../CloseButton/CloseButton';
 import styles from './NavModal.module.css';
 
 export default function NavModal() {
@@ -29,12 +30,7 @@ export default function NavModal() {
           </span>
           <span className={styles.moreText}>More From New York Times Games</span>
         </div>
-        <span
-          className={styles.closeIcon}
-          onClick={handleCloseNavModal}
-        >
-          {closeIconSVG}
-        </span>
+        <CloseButton onClick={handleCloseNavModal} extraStyles={{ top: '1rem', right: '1rem' }}/>
         <div className={styles.gameList}>
           {
             gameListContent.map((content, index) => (

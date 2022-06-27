@@ -23,12 +23,14 @@ export default function InstructionPage() {
 
   return (
     <PageContainer isClosing={isPageClosing}>
-      <div className={styles.contentWrapper}>
+      <div className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>How to play</h1>
           <CloseButton extraStyles={{ top: '0.335rem', right: '0' }} onClick={handleCloseButtonClicked} />
         </header>
-        <InstructionContent />
+        <div className={styles.contentWrapper}>
+          <InstructionContent />
+        </div>
       </div>
     </PageContainer>
   )

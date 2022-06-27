@@ -1,8 +1,9 @@
 .container {
+  width: 100%;
+  max-width: var(--game-max-width);
+
   display: flex;
   flex-direction: column;
-
-  padding: 0 1rem 1rem 1rem;
 
   font-size: 14px;
   font-family: var(--instruction-content-font-family);
@@ -62,21 +63,14 @@
 }
 
 .tileContainer[data-animation=flip-in-out] {
-  animation: FlipIn 250ms ease-in,
-             FlipOut 250ms ease-in 250ms;
+  animation: FlipInOut 500ms ease-in-out;
 }
 
-@keyframes FlipIn {
+@keyframes FlipInOut {
   0% {
     transform: rotateX(0deg);
   }
-  100% {
-    transform: rotateX(-90deg);
-  }
-}
-
-@keyframes FlipOut {
-  0% {
+  50% {
     transform: rotateX(-90deg);
   }
   100% {
