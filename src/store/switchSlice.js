@@ -3,7 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   isNavModalShowing: false,
   isInstructionPageShowing: false,
-  isInstructionModalShowing: true
+  isInstructionModalShowing: false,
+  isSettingPageShowing: false,
+
+  isDarkTheme: false,
+  isHighContrastMode: false,
 };
 
 export const switchSlice = createSlice({
@@ -18,11 +22,27 @@ export const switchSlice = createSlice({
     },
     setIsInstructionModalShowing: (state, action) => {
       state.isInstructionModalShowing  = action.payload;
+    },
+    setIsSettingPageShowing: (state, action) => {
+      state.isSettingPageShowing  = action.payload;
+    },
+    setIsDarkTheme: (state, action) => {
+      state.isDarkTheme = action.payload;
+    },
+    setIsHighContrastMode: (state, action) => {
+      state.isHighContrastMode = action.payload;
     }
   }
 });
 
-export const { setIsNavModalShowing, setIsInstructionPageShowing, setIsInstructionModalShowing } = switchSlice.actions;
+export const {
+  setIsNavModalShowing,
+  setIsInstructionPageShowing,
+  setIsInstructionModalShowing,
+  setIsSettingPageShowing,
+  setIsDarkTheme,
+  setIsHighContrastMode,
+} = switchSlice.actions;
 
 export const selectIsNavModalShowing = (state) => state.switch.isNavModalShowing;
 
@@ -30,5 +50,10 @@ export const selectIsInstructionPageShowing = (state) => state.switch.isInstruct
 
 export const selectIsInstructionModalShowing = (state) => state.switch.isInstructionModalShowing;
 
+export const selectIsSettingPageShowing = (state) => state.switch.isSettingPageShowing;
+
+export const selectIsDarkTheme = (state) => state.switch.isDarkTheme;
+
+export const selectIsHighContrastMode = (state) => state.switch.isHighContrastMode;
 
 export default switchSlice.reducer;

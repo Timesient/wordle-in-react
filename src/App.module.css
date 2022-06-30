@@ -1,34 +1,47 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  background-color: var(--color-background);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app.highContrastMode {
+  --color-correct: var(--orange);
+  --color-present: var(--blue);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.darkTheme {
+  --color-tone-1: #ffffff;
+  --color-tone-2: #818384;
+  --color-tone-3: #565758;
+  --color-tone-4: #3a3a3c;
+  --color-tone-5: #272729;
+  --color-tone-6: #1a1a1b;
+  --color-tone-7: #121213;
+  --color-nav-hover: #2f2f31;
+  --opacity-50: rgba(0, 0, 0, 0.5);
+  --error-background: var(--color-tone-7);
+  --color-background: var(--color-tone-7);
+  --icon-disabled: #59595a;
 
-.App-link {
-  color: #61dafb;
-}
+  --color-present: var(--darkendYellow);
+  --color-correct: var(--darkendGreen);
+  --color-absent: var(--color-tone-4);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  --tile-text-color: var(--color-tone-1);
+  --key-text-color: var(--color-tone-1);
+  --key-evaluated-text-color: var(--color-tone-1);
+  --key-bg: var(--color-tone-2);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+  --modal-content-bg: var(--color-tone-7);
+
+  --spelling-bee: url('../public/images/SpellingBee-Icon-Normalized-Color.svg');
+  --daily: url('../public/images/Crossword-Icon-Normalized-Color.svg');
+  --mini: url('../public/images/Mini-Icon-Normalized-Color.svg');
+  --chess: url('../public/images/Chess-Icon-Normalized-Color.svg');
+
+  --nyt: url('../public/images/NYT-Icon-Normalized-Color.svg');
+  --athletic: url('../public/images/Athletic-Icon-Normalized-Color.svg');
 }

@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
 
+  color: var(--color-tone-1);
   font-size: 14px;
   font-family: var(--instruction-content-font-family);
 }
@@ -45,19 +46,19 @@
 }
 
 .tileContainer[data-state=correct] {
-  color: var(--color-tone-7);
+  color: var(--tile-text-color);
   border-color: var(--color-correct);
   background-color: var(--color-correct);
 }
 
 .tileContainer[data-state=present] {
-  color: var(--color-tone-7);
+  color: var(--tile-text-color);
   border-color: var(--color-present);
   background-color: var(--color-present);
 }
 
 .tileContainer[data-state=absent] {
-  color: var(--color-tone-7);
+  color: var(--tile-text-color);
   border-color: var(--color-absent);
   background-color: var(--color-absent);
 }

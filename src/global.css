@@ -35,10 +35,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 /* base color */
 :root {
   --color-tone-1: #000000;
@@ -49,13 +45,19 @@ code {
   --color-tone-6: #f6f7f8;
   --color-tone-7: #ffffff;
   --color-nav-hover: #f4f4f4;
+  --color-background: var(--color-tone-7);
   --opacity-50: rgba(255, 255, 255, 0.5);
 }
 
-/* tile color */
+/* evaluation color */
 :root {
   --green: #6aaa64;
+  --darkendGreen: #538d4e;
   --yellow: #c9b458;
+  --darkendYellow: #b59f3b;
+  --orange: #f5793a;
+  --blue: #85c0f9;
+  --white: #ffffff;
 
   --color-correct: var(--green);
   --color-present: var(--yellow);
@@ -66,18 +68,10 @@ code {
 :root {
   --header-height: 50px;
   --game-max-width: 500px;
+  --font-family-normal: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* keyboard & key */
-:root {
-  --keyboard-height: 200px;
-  --keyboard-font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 
-  --key-bg: var(--color-tone-4);
-  --key-bg-present: var(--color-present);
-  --key-bg-correct: var(--color-correct);
-  --key-bg-absent: var(--color-absent);
-}
 
 /* z-index */
 :root {
@@ -95,7 +89,50 @@ code {
   --modal-nav-item-font-family: 'NYTFranklin-500';
 }
 
+/* Nav Modal Icon URLs */
+:root {
+  --spelling-bee: url('../public/images/SpellingBee-Icon-Normalized.svg');
+  --daily: url('../public/images/Crossword-Icon-Normalized.svg');
+  --mini: url('../public/images/Mini-Icon-Normalized.svg');
+  --wordlebot: url('../public/images/WordleBot-Icon-Normalized.svg');
+  --chess: url('../public/images/Chess-Icon-Normalized.svg');
+
+  --nyt: url('../public/images/NYT-Icon-Normalized.svg');
+  --cooking: url('../public/images/Cooking-Icon-Normalized.svg');
+  --wirecutter: url('../public/images/Wirecutter-Icon-Normalized.svg');
+  --athletic: url('../public/images/Athletic-Icon-Normalized.svg');
+}
+
 /* instruction */
 :root {
-  --instruction-content-font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  --instruction-content-font-family: var(--font-family-normal);
+}
+
+/* setting */
+:root {
+  --setting-content-font-family: var(--font-family-normal);
+}
+
+/* tile */
+:root {
+  --tile-text-color: var(--color-tone-7);
+  --tile-font-family: var(--font-family-normal);
+}
+
+/* keyboard & key */
+:root {
+  --keyboard-height: 200px;
+  --keyboard-font-family: var(--font-family-normal);
+  
+  --key-text-color: var(--color-tone-1);
+  --key-evaluated-text-color: var(--color-tone-7);
+  --key-bg: var(--color-tone-4);
+  --key-bg-present: var(--color-present);
+  --key-bg-correct: var(--color-correct);
+  --key-bg-absent: var(--color-absent);
+}
+
+/* toast */
+:root {
+  --toast-font-family: var(--font-family-normal);
 }

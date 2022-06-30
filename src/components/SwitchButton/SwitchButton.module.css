@@ -1,0 +1,46 @@
+.container {
+  height: 20px;
+  transform: translateY(-4px);
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.switch {
+  position: relative;
+
+  width: 32px;
+  height: 20px;
+
+  border: none;
+  border-radius: 999px;
+  
+  outline: none;
+  background-color: var(--color-tone-3);
+}
+
+.switch[data-checked=true] {
+  background-color: var(--color-correct);
+}
+
+.knob {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+
+  height: calc(100% - 4px);
+  width: 50%;
+  
+  display: block;
+  
+  border-radius: 8px;
+  background-color: var(--white);
+
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+
+.knob[data-checked=true] {
+  transform: translateX(calc(100% - 4px));
+}

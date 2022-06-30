@@ -7,6 +7,8 @@
   align-items: center;
 
   border-bottom: 1px solid var(--color-tone-4);
+
+  color: var(--color-tone-1);
 }
 
 .menuLeft,

@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
 
-  background-color: var(--color-tone-7);
+  background-color: var(--color-background);
   z-index: var(--page-z-index);
 
   animation: SlideIn 100ms linear;

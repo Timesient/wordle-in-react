@@ -36,7 +36,7 @@ export default function NavModal() {
             gameListContent.map((content, index) => (
               <a aria-label={content.title} href={content.href} className={styles.navLink} key={index}>
                 <div className={styles.navItem}>
-                  <span className={styles.navIcon} style={{ backgroundImage: `url(${content.iconURL})` }} />
+                  <span className={styles.navIcon} style={{ backgroundImage: `var(${content.iconVariable})` }} />
                   <span className={styles.navTitle}>{content.title}</span>
                 </div>
               </a>
@@ -48,7 +48,7 @@ export default function NavModal() {
             nytListContent.map((content, index) => (
               <a aria-label={content.title} href={content.href} className={styles.navLink} key={index}>
                 <div className={styles.navItem}>
-                  <span className={styles.navIcon} style={{ backgroundImage: `url(${content.iconURL})` }} />
+                  <span className={styles.navIcon} style={{ backgroundImage: `var(${content.iconVariable})` }} />
                   <span className={styles.navTitle}>{content.title}</span>
                 </div>
               </a>
