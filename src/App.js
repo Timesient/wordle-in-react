@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import {
   selectCurrentRowIndex,
   selectIsRunningEvaluationAnimation,
@@ -27,9 +28,9 @@ import NavModal from './components/NavModal/NavModal';
 import InstructionPage from './components/Instruction/InstructionPage';
 import InstructionModal from './components/Instruction/InstructionModal';
 import ToastContainer from './components/ToastContainer/ToastContainer';
+import StatisticModal from './components/StatisticModal/StatisticModal';
 import SettingPage from './components/SettingPage/SettingPage';
 import styles from './App.module.css';
-import StatisticModal from './components/StatisticModal/StatisticModal';
 
 export default function App() {
   const currentRowIndex = useSelector(selectCurrentRowIndex);
@@ -51,15 +52,17 @@ export default function App() {
   }, [gameStatistic.gamesPlayed, currentRowIndex]);
 
   useEffect(() => {
+    // after win and played evaluation animation
     if (!isRunningEvaluationAnimation && isRunningWinAnimation) {
       dispatch(addWinToast());
-      dispatch(updateWinnedGameStatistic(currentRowIndex + 1)); // win and update statistic
+      dispatch(updateWinnedGameStatistic(currentRowIndex + 1));
       setTimeout(() => {
         isInstructionModalShowing && dispatch(setIsInstructionModalShowing(false));
         dispatch(setIsStatisticModalShowing(true));
       }, 2400);
     }
 
+    // after failed and played evaluation animation
     if (!isRunningEvaluationAnimation && isRunningFailAnimation) {
       dispatch(addFailToast());
       dispatch(updateFailedGameStatistic()); // fail and update statistic

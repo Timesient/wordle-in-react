@@ -1,4 +1,3 @@
-
 import { closeIconSVG } from '../../lib/svgIcons';
 import styles from './CloseButton.module.css';
 

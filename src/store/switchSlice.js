@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+/* initial */
 const initialState = {
   isNavModalShowing: false,
   isInstructionPageShowing: false,
@@ -11,6 +12,8 @@ const initialState = {
   isHighContrastMode: JSON.parse(window.localStorage['wordle-isHighContrastMode'] === 'true')
 };
 
+
+/* slice definition */
 export const switchSlice = createSlice({
   name: 'switch',
   initialState,
@@ -41,6 +44,8 @@ export const switchSlice = createSlice({
   }
 });
 
+
+/* exports */
 export const {
   setIsNavModalShowing,
   setIsInstructionPageShowing,

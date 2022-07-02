@@ -25,12 +25,14 @@ export default function StatisticModal() {
   const [timerText, setTimerText] = useState('');
   const dispatch = useDispatch();
 
+  // calculate max guess in guesses
   useEffect(() => {
     const guesses = gameStatistic.guesses;
     const max = Math.max(guesses[1], guesses[2], guesses[3], guesses[4], guesses[5], guesses[6]);
     setMaxGuessCount(max);
   }, [gameStatistic.guesses]);
 
+  // generate timer text every second
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();

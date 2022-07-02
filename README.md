@@ -6,7 +6,10 @@
 
 在线展示地址：[wordle.dd1969.xyz](https://wordle.dd1969.xyz)
 
+
 ## 截图展示
-<img style="border: 1px solid #ccc; padding: 4px; margin-bottom: 4px;" src="https://dd1969.xyz/uploads/wordle.gif" />
-<img style="border: 1px solid #ccc; padding: 4px; margin-bottom: 4px;" src="https://s1.ax1x.com/2022/07/02/j3ViC9.png" />
-<img style="border: 1px solid #ccc; padding: 4px; margin-bottom: 4px;" src="https://s1.ax1x.com/2022/07/02/j3VC4J.png" />
+![gif](https://dd1969.xyz/uploads/wordle.gif)
+
+![statistic](https://s1.ax1x.com/2022/07/02/j3ViC9.png)
+
+![dark-theme-and-high-contrast-mode](https://s1.ax1x.com/2022/07/02/j3VC4J.png)

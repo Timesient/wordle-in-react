@@ -1,4 +1,3 @@
-
 import styles from './SwitchButton.module.css';
 
 export default function SwitchButton({ isChecked, isDisabled, onClick }) {
