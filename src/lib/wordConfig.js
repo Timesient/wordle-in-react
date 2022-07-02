@@ -28,21 +28,24 @@ function getEvaluation(word) {
   wordLetters.forEach((letter, index) => {
     if (letter === solutionLetters[index]) {
       evaluation[index] = 'correct';
-    } else if (solutionLetters.includes(letter)) {
-      evaluation[index] = 'present';
-    } else {
+    } else if (!solutionLetters.includes(letter)) {
       evaluation[index] = 'absent';
+    } else {
+      evaluation[index] = 'tbd';
     }
   });
 
-  evaluation.forEach((result, index) => {
-    if (result !== 'correct') return;
+  evaluation.forEach((result, resultIndex) => {
+    if (result === 'tbd') {
+      let hasSameLetterButIsntEvaluatedToBeCorrect = false;
+      const letter = wordLetters[resultIndex]; // target letter
+      solutionLetters.forEach((solutionLetter, solutionLetterIndex) => {
+        if (solutionLetter === letter && evaluation[solutionLetterIndex] !== 'correct') {
+          hasSameLetterButIsntEvaluatedToBeCorrect = true;
+        }
+      });
 
-    const letter = wordLetters[index];
-    for (let i = 0; i < 5; i++) {
-      if (wordLetters[i] === letter && evaluation[i] === 'present') {
-        evaluation[i] = 'absent';
-      }
+      evaluation[resultIndex] = hasSameLetterButIsntEvaluatedToBeCorrect ? 'present' : 'absent';
     }
   });
 

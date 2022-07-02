@@ -71,8 +71,6 @@ body {
   --font-family-normal: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
-
-
 /* z-index */
 :root {
   --error-z-index: 500;
@@ -106,6 +104,18 @@ body {
 /* instruction */
 :root {
   --instruction-content-font-family: var(--font-family-normal);
+}
+
+/* statistic */
+:root {
+  --statistic-content-font-family: var(--font-family-normal);
+  --promo-icon-height: 40px;
+  --promo-icon-width: 40px;
+  --promo-icon-padding: 0px;
+  --promo-text-font-family: 'NYTFranklin-500';
+  --promo-cta-font-family: 'NYTFranklin-700';
+  --svg-arrow-fill: var(--color-tone-7);
+  --svg-arrow-stroke: var(--color-tone-1);
 }
 
 /* setting */

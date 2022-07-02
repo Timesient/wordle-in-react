@@ -18,6 +18,7 @@
 .contentContainer {
   position: relative;
 
+  width: var(--game-max-width);
   max-width: var(--game-max-width);
   padding: 1rem;
 

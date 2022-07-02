@@ -23,6 +23,8 @@
   --error-background: var(--color-tone-7);
   --color-background: var(--color-tone-7);
   --icon-disabled: #59595a;
+  --svg-arrow-fill: var(--color-tone-7);
+  --svg-arrow-stroke: var(--color-tone-1);
 
   --color-present: var(--darkendYellow);
   --color-correct: var(--darkendGreen);
@@ -41,7 +43,6 @@
   --daily: url('../public/images/Crossword-Icon-Normalized-Color.svg');
   --mini: url('../public/images/Mini-Icon-Normalized-Color.svg');
   --chess: url('../public/images/Chess-Icon-Normalized-Color.svg');
-
   --nyt: url('../public/images/NYT-Icon-Normalized-Color.svg');
   --athletic: url('../public/images/Athletic-Icon-Normalized-Color.svg');
 }

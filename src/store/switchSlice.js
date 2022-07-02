@@ -4,6 +4,7 @@ const initialState = {
   isNavModalShowing: false,
   isInstructionPageShowing: false,
   isInstructionModalShowing: false,
+  isStatisticModalShowing: false,
   isSettingPageShowing: false,
 
   isDarkTheme: false,
@@ -23,6 +24,9 @@ export const switchSlice = createSlice({
     setIsInstructionModalShowing: (state, action) => {
       state.isInstructionModalShowing  = action.payload;
     },
+    setIsStatisticModalShowing: (state, action) => {
+      state.isStatisticModalShowing  = action.payload;
+    },
     setIsSettingPageShowing: (state, action) => {
       state.isSettingPageShowing  = action.payload;
     },
@@ -39,6 +43,7 @@ export const {
   setIsNavModalShowing,
   setIsInstructionPageShowing,
   setIsInstructionModalShowing,
+  setIsStatisticModalShowing,
   setIsSettingPageShowing,
   setIsDarkTheme,
   setIsHighContrastMode,
@@ -49,6 +54,8 @@ export const selectIsNavModalShowing = (state) => state.switch.isNavModalShowing
 export const selectIsInstructionPageShowing = (state) => state.switch.isInstructionPageShowing;
 
 export const selectIsInstructionModalShowing = (state) => state.switch.isInstructionModalShowing;
+
+export const selectIsStatisticModalShowing = (state) => state.switch.isStatisticModalShowing;
 
 export const selectIsSettingPageShowing = (state) => state.switch.isSettingPageShowing;
 

@@ -1,0 +1,220 @@
+.contentWrapper {
+  width: 100%;
+  max-width: var(--game-max-width);
+  padding-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: var(--statistic-content-font-family);
+  color: var(--color-tone-1);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.statisticsContainer {
+  padding-bottom: 10px;
+
+  display: flex;
+}
+
+.statisticWrapper {
+  flex: 1;
+}
+
+.statistic {
+  font-size: 36px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.05em;
+  font-variant-numeric: proportional-nums;
+}
+
+.statisticLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  text-align: center;
+}
+
+.guessDistribution {
+  width: 80%;
+  padding-bottom: 10px;
+}
+
+.graphContainer {
+  width: 100%;
+  height: 24px;
+  padding-bottom: 4px;
+  
+  display: flex;
+  align-items: center;
+  
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.graph {
+  width: 100%;
+  height: 100%;
+  padding-left: 4px;
+}
+
+.graphBar {
+  position: relative;
+
+  min-width: 7%;
+  height: 100%;
+
+  background-color: var(--color-absent);
+
+  display: flex;
+  justify-content: center;
+}
+
+.alignRight {
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.highlight {
+  background-color: var(--color-correct);
+}
+
+.numGuesses {
+  font-weight: bold;
+  color: var(--tile-text-color);
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+}
+
+.countdown {
+  width: calc(50% + 1px);
+  padding-right: 12px;
+  border-right: 1px solid var(--color-tone-1);
+}
+
+.timerContainer {
+  font-size: 36px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.share {
+  width: 50%;
+  padding-left: 12px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shareButton {
+  width: 80%;
+  height: 52px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 4px;
+  border: none;
+  
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--key-evaluated-text-color);
+  text-transform: uppercase;
+
+  background-color: var(--key-bg-correct);
+  filter: brightness(100%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.shareIcon {
+  width: 32px;
+  height: 24px;
+  padding-left: 8px;
+}
+
+.promo {
+  position: relative;
+
+  width: 100%;
+  margin-top: 12px;
+}
+
+.divider {
+  position: absolute;
+  width: calc(100% + 32px);
+  
+  height: 1px;
+  margin-left: -16px;
+
+  background-color: var(--color-tone-4);
+}
+
+.promoLink {
+  width: 100%;
+  padding-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-decoration: none;
+}
+
+.promoIcon {
+  width: var(--promo-icon-width);
+  height: var(--promo-icon-height);
+  margin-right: 1rem;
+  padding: var(--promo-icon-padding);
+}
+
+.promoText {
+  font-family: var(--promo-text-font-family);
+  font-size: 14px;
+  color: var(--color-tone-1);
+  flex-grow: 2;
+  line-height: 16px;
+}
+
+.promoCta {
+  margin-top: 4px;
+  font-family: var(--promo-cta-font-family);
+  font-weight: 700;
+}
+
+.promoLink:hover .promoCta {
+  text-decoration: underline;
+}
+
+.promoArrow {
+  justify-self: flex-end;
+}
+
+.promoLink:hover .promoArrow {
+  --svg-arrow-fill: var(--color-tone-1);
+  --svg-arrow-stroke: var(--color-tone-7);
+}

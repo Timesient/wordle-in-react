@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsInstructionModalShowing, setIsInstructionModalShowing } from "../../store/switchSlice";
 import ModalContainer from "../ModalContainer/ModalContainer";
 import InstructionContent from "./InstructionContent";
 import CloseButton from '../CloseButton/CloseButton';
 import styles from './InstructionModal.module.css';
-import { useState } from "react";
 
 export default function InstructionModal() {
   const isInstructionModalShowing = useSelector(selectIsInstructionModalShowing);

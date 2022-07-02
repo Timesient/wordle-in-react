@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import {
   setIsNavModalShowing,
   setIsInstructionPageShowing,
+  setIsStatisticModalShowing,
   setIsSettingPageShowing,
 } from '../../store/switchSlice';
 import { menuIconSVG, helpIconSVG, statIconSVG, settingIconSVG } from '../../lib/svgIcons';
@@ -29,7 +30,12 @@ export default function AppHeader() {
       </div>
       <div className={styles.title}>Wordle</div>
       <div className={styles.menuRight}>
-        <button className={styles.icon}>{ statIconSVG }</button>
+        <button
+          className={styles.icon}
+          onClick={() => dispatch(setIsStatisticModalShowing(true))}
+        >
+          { statIconSVG }
+        </button>
         <button
           className={styles.icon}
           onClick={() => dispatch(setIsSettingPageShowing(true))}

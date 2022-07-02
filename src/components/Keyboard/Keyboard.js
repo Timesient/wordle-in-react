@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
+  selectGameStatus,
   selectBoardState,
   selectIsRunningInitEvaluationAnimation,
   selectIsRunningEvaluationAnimation,
@@ -10,6 +11,7 @@ import {
   delLetterOnCurrentRow,
   requestEvaluation
 } from '../../store/gameStateSlice';
+import { setIsStatisticModalShowing } from '../../store/switchSlice';
 import { backspaceIconSVG } from '../../lib/svgIcons';
 import styles from './Keyboard.module.css';
 
@@ -32,6 +34,7 @@ const keys = keyboardArrangement.reduce((acc, cur) => acc.concat(cur.filter(key 
 
 export default function Keyboard() {
   const [keyboardState, setKeyboardState] = useState(initialKeyboardState);
+  const gameStatus = useSelector(selectGameStatus);
   const boardState = useSelector(selectBoardState);
   const isRunningInitEvaluationAnimation = useSelector(selectIsRunningInitEvaluationAnimation);
   const isRunningEvaluationAnimation = useSelector(selectIsRunningEvaluationAnimation);
@@ -72,6 +75,7 @@ export default function Keyboard() {
       setTimeout(() => {
         dispatch(setIsRunningInitEvaluationAnimation(false));
         updateKeyboardState();
+        gameStatus !== "IN_PROGRESS" && dispatch(setIsStatisticModalShowing(true));
       }, boardState[0][0].letter ? 1000 : 0);
     }
     

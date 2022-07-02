@@ -5,12 +5,13 @@ const initialState = {
   isHardMode: false,
   solution: getSolution(),
   gameStatus: "IN_PROGRESS",
-  boardState: ['umrah', '', '', '', '', ''],
-  evaluations: [['present', 'absent', 'absent', 'absent', 'correct'], null, null, null, null, null],
-  currentRowIndex: 1,
+  boardState: ['', '', '', '', '', ''],
+  evaluations: [null, null, null, null, null, null],
+  currentRowIndex: 0,
+  lastPlayedTimestamp: 0,
+  lastCompletedTimestamp: 0,
 
   toasts: [],
-
   isRunningInitEvaluationAnimation: true,
   isRunningEvaluationAnimation: false,
   isRunningInvalidAnimation: false,
@@ -99,13 +100,16 @@ export const gameStateSlice = createSlice({
         const evaluation = getEvaluation(currentRowState);
         state.evaluations[state.currentRowIndex] = evaluation;
         state.isRunningEvaluationAnimation = true;
+        state.lastPlayedTimestamp = Date.now()
         
         if (currentRowState === state.solution) { // win
           state.gameStatus = 'WIN';
           state.isRunningWinAnimation = true;
+          state.lastCompletedTimestamp = Date.now();
         } else if (state.currentRowIndex === 5){ // fail
           state.gameStatus = 'FAIL';
           state.isRunningFailAnimation = true;
+          state.lastCompletedTimestamp = Date.now();
         } else { // continue
           state.currentRowIndex += 1;
         }
