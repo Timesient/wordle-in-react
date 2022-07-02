@@ -58,7 +58,7 @@ export const gameStatisticSlice = createSlice({
 });
 
 
-/* assist functions */
+/* assistant functions */
 function calculateAverageGuesses(guesses, wonCount) {
   return (guesses[1] + guesses[2] * 2 + guesses[3] * 3 + guesses[4] * 4 + guesses[5] * 5 + guesses[6] * 6) / wonCount;
 }

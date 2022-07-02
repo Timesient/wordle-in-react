@@ -7,8 +7,8 @@ const initialState = {
   isStatisticModalShowing: false,
   isSettingPageShowing: false,
 
-  isDarkTheme: false,
-  isHighContrastMode: false,
+  isDarkTheme: JSON.parse(window.localStorage['wordle-isDarkTheme'] === 'true'),
+  isHighContrastMode: JSON.parse(window.localStorage['wordle-isHighContrastMode'] === 'true')
 };
 
 export const switchSlice = createSlice({
@@ -32,9 +32,11 @@ export const switchSlice = createSlice({
     },
     setIsDarkTheme: (state, action) => {
       state.isDarkTheme = action.payload;
+      window.localStorage.setItem('wordle-isDarkTheme', action.payload);
     },
     setIsHighContrastMode: (state, action) => {
       state.isHighContrastMode = action.payload;
+      window.localStorage.setItem('wordle-isHighContrastMode', action.payload);
     }
   }
 });

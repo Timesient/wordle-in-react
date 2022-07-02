@@ -1,62 +1,59 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { isInWordList, getSolution, getEvaluation, toastMsgWhenWin, orders } from '../lib/wordConfig';
 
-const initialState = {
+/* initial */
+let initialState = {
   isHardMode: false,
   solution: getSolution(),
   gameStatus: "IN_PROGRESS",
   boardState: ['', '', '', '', '', ''],
   evaluations: [null, null, null, null, null, null],
   currentRowIndex: 0,
-  lastPlayedTimestamp: 0,
-  lastCompletedTimestamp: 0,
+  lastCompletedTimestamp: 0
+};
 
+let assistantState = {
   toasts: [],
   isRunningInitEvaluationAnimation: true,
   isRunningEvaluationAnimation: false,
   isRunningInvalidAnimation: false,
   isRunningWinAnimation: false,
   isRunningFailAnimation: false,
-};
-
-function isAllowToOperate(state) {
-  return !state.isRunningInitEvaluationAnimation && !state.isRunningEvaluationAnimation && state.gameStatus === 'IN_PROGRESS';
 }
 
-function wordCheckForHardModeRule(state, word) {
-  // 1. correct check
-  for (let i = 0; i < 6; i++) {
-    const evaluation = state.evaluations[i];
-    if (!evaluation) break;
 
-    for (let j = 0; j < 5; j++) {
-      if (evaluation[j] === 'correct') {
-        const correctLetter = state.boardState[i][j];
-        if (word[j] !== correctLetter) {
-          return { isValid: false, msg: `${orders[j]} letter must be ${correctLetter.toUpperCase()}` }
-        }
-      }
+/* local storage operation */
+const storageKey = 'wordle-state';
+if (window.localStorage[storageKey] === undefined) {
+  window.localStorage.setItem(storageKey, JSON.stringify(initialState));
+} else {
+  const storageState = JSON.parse(window.localStorage[storageKey]);
+  const nowDate = new Date().toLocaleDateString();
+  const lastCompletedDate = new Date(storageState.lastCompletedTimestamp).toLocaleDateString();
+
+  if (storageState.gameStatus === 'IN_PROGRESS') {
+    if (storageState.currentRowIndex === 0) { // not request any evalution yet
+      initialState.isHardMode = storageState.isHardMode;
+      initialState.lastCompletedTimestamp = storageState.lastCompletedTimestamp;
+      window.localStorage.setItem(storageKey, JSON.stringify(initialState));
+    } else { // already requested evalution
+      initialState = storageState;
+    }
+  } else { // 'WIN' or 'FAIL'
+    if (nowDate !== lastCompletedDate) { // day changed
+      initialState.isHardMode = storageState.isHardMode;
+      initialState.lastCompletedTimestamp = storageState.lastCompletedTimestamp;
+      window.localStorage.setItem(storageKey, JSON.stringify(initialState));
+    } else { // same day
+      initialState = storageState;
     }
   }
-
-  // 2. present check
-  for (let i = 0; i < 6; i++) {
-    const evaluation = state.evaluations[i];
-    if (!evaluation) break;
-
-    for (let j = 0; j < 5; j++) {
-      if (evaluation[j] === 'present') {
-        const presentLetter = state.boardState[i][j];
-        if (!word.split('').includes(presentLetter)) {
-          return { isValid: false, msg: `Guess must contain ${presentLetter.toUpperCase()}` }
-        }
-      }
-    }
-  }
-
-  return { isValid: true, msg: '' };
 }
 
+initialState = Object.assign(initialState, assistantState);
+
+
+/* slice definition */
 export const gameStateSlice = createSlice({
   name: 'gameState',
   initialState,
@@ -104,19 +101,22 @@ export const gameStateSlice = createSlice({
         
         if (currentRowState === state.solution) { // win
           state.gameStatus = 'WIN';
-          state.isRunningWinAnimation = true;
           state.lastCompletedTimestamp = Date.now();
+          state.isRunningWinAnimation = true;
         } else if (state.currentRowIndex === 5){ // fail
           state.gameStatus = 'FAIL';
-          state.isRunningFailAnimation = true;
           state.lastCompletedTimestamp = Date.now();
+          state.isRunningFailAnimation = true;
         } else { // continue
           state.currentRowIndex += 1;
         }
+
+        updateLocalStorageState(state);
       }
     },
     setIsHardMode: (state, action) => {
       state.isHardMode = action.payload;
+      updateLocalStorageState(state);
     },
     setIsRunningInitEvaluationAnimation: (state, action) => {
       state.isRunningInitEvaluationAnimation = action.payload;
@@ -154,6 +154,60 @@ export const gameStateSlice = createSlice({
   }
 });
 
+
+/* assistant functions */
+function isAllowToOperate(state) {
+  return !state.isRunningInitEvaluationAnimation && !state.isRunningEvaluationAnimation && state.gameStatus === 'IN_PROGRESS';
+}
+
+function wordCheckForHardModeRule(state, word) {
+  // 1. correct check
+  for (let i = 0; i < 6; i++) {
+    const evaluation = state.evaluations[i];
+    if (!evaluation) break;
+
+    for (let j = 0; j < 5; j++) {
+      if (evaluation[j] === 'correct') {
+        const correctLetter = state.boardState[i][j];
+        if (word[j] !== correctLetter) {
+          return { isValid: false, msg: `${orders[j]} letter must be ${correctLetter.toUpperCase()}` }
+        }
+      }
+    }
+  }
+
+  // 2. present check
+  for (let i = 0; i < 6; i++) {
+    const evaluation = state.evaluations[i];
+    if (!evaluation) break;
+
+    for (let j = 0; j < 5; j++) {
+      if (evaluation[j] === 'present') {
+        const presentLetter = state.boardState[i][j];
+        if (!word.split('').includes(presentLetter)) {
+          return { isValid: false, msg: `Guess must contain ${presentLetter.toUpperCase()}` }
+        }
+      }
+    }
+  }
+
+  return { isValid: true, msg: '' };
+}
+
+function updateLocalStorageState({ isHardMode, solution, gameStatus, boardState, evaluations, currentRowIndex, lastCompletedTimestamp }) {
+  window.localStorage.setItem(storageKey, JSON.stringify({
+    isHardMode,
+    solution,
+    gameStatus,
+    boardState,
+    evaluations,
+    currentRowIndex,
+    lastCompletedTimestamp
+  }));
+}
+
+
+/* exports */
 export const {
   addLetterOnCurrentRow,
   delLetterOnCurrentRow,
