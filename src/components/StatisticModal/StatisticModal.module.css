@@ -200,6 +200,10 @@
   line-height: 16px;
 }
 
+.promoTextPrimary {
+  display: inline;
+}
+
 .promoCta {
   margin-top: 4px;
   font-family: var(--promo-cta-font-family);
@@ -217,4 +221,21 @@
 .promoLink:hover .promoArrow {
   --svg-arrow-fill: var(--color-tone-1);
   --svg-arrow-stroke: var(--color-tone-7);
+}
+
+@media (max-width: 500px) {
+  .promoTextPrimary {
+    display: block;
+  }
+}
+
+@media (max-width: 444px) {
+  .countdown {
+    box-sizing: content-box;
+    width: 50%;
+  }
+
+  .shareButton {
+    font-size: 16px;
+  }
 }

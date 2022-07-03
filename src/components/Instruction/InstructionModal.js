@@ -23,7 +23,7 @@ export default function InstructionModal() {
 
   return (
     <ModalContainer handleCloseModal={handleCloseModal} isClosing={isClosing}>
-      <CloseButton extraStyles={{ top: '1rem', right: '1rem' }}/>
+      <CloseButton extraStyles={{ top: '1rem', right: '1rem', padding: '0' }}/>
       <div className={styles.contentWrapper}>
         <InstructionContent />
       </div>

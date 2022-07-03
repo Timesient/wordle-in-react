@@ -75,3 +75,20 @@
   font-size: 12px;
   color: var(--color-tone-2);
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .settingItem {
+    padding: 1rem;
+  }
+
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+}
