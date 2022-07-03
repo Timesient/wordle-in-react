@@ -94,7 +94,7 @@ export default function StatisticModal() {
               {
                 Array.from({ length: 6 }, (item, index) => {
                   return (
-                    <div className={styles.graphContainer}>
+                    <div className={styles.graphContainer} key={index}>
                       <div>{index + 1}</div>
                       <div className={styles.graph}>
                         <div

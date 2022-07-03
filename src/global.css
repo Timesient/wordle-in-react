@@ -146,3 +146,5 @@ body {
 :root {
   --toast-font-family: var(--font-family-normal);
 }
+
+@media (prefers-color-scheme: dark) {}

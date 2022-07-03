@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+/* check if it is system in dark theme */
+const isSystemDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches;
+if (window.localStorage['wordle-isDarkTheme'] === undefined) {
+  window.localStorage.setItem('wordle-isDarkTheme', isSystemDarkTheme);
+}
+
+
 /* initial */
 const initialState = {
   isNavModalShowing: false,
