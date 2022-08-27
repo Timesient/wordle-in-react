@@ -8,7 +8,7 @@
 
 
 ## 截图展示
-![gif](https://dd1969.xyz/uploads/wordle.gif)
+![gif](https://public.dm.files.1drv.com/y4mHInjf3KjT1TM-dJ4hpSWgYzrd4hZEq7klLg7GqXikyE_bZV76tkKWiqlnAcJuOzsWTyE6nvsI1kfUI1NKiJxLa0XQvF7R32OZY26dDH0q02C4K5ocCLbW8GMYdMzk3SMFUZLakDxj4_K89pWLMTx03da_4p_K2my31Xu5jI__FJsGUp3yMQZtlP8V7g8cWygdNOsyVJN_jJGfAPPyKnFz932sMczoi0sQXmq1j_vQe0)
 
 ![statistic](https://s1.ax1x.com/2022/07/02/j3ViC9.png)
 
